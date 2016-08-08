@@ -290,7 +290,7 @@ body {
   font-family: 'Avenir Next', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #8f8f8f;
+  background: #4f6c9d;
   color: #fff;
   overflow: hidden;
   font-size: 24px;
@@ -455,7 +455,66 @@ body {
   background-image: url("../images/cover-guide.png");
 }
 
-#logo {
+#cover-back {
+  top: 113px;
+  left: 0;
+  width: 640px;
+  height: 930px;
+  background-image: url("../images/cover-back.png");
+}
+
+#mt-container {
+  bottom: 0;
+  left: 0;
+  width: 640px;
+  height: 188px;
+}
+
+#moutains {
+  top: 0;
+  left: -814px;
+  width: 1628px;
+  height: 277px;
+}
+
+.moutain {
+  top: 0;
+  width: 814px;
+  height: 277px;
+  background-image: url("../images/moutain.png");
+}
+
+#moutain1 {
+  left: 0;
+}
+
+#moutain2 {
+  left: 814px;
+}
+
+#trees {
+  top: 140px;
+  left: -656px;
+  width: 1306px;
+  height: 103px;
+}
+
+.tree {
+  top: 0;
+  width: 653px;
+  height: 103px;
+  background-image: url("../images/trees.png");
+}
+
+#tree1 {
+  left: 0;
+}
+
+#tree2 {
+  left: 653px;
+}
+
+#logo, #cover {
   display: none;
 }
 

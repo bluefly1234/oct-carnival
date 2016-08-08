@@ -59,7 +59,8 @@ html, body {
 /* ==========================================================================
  定义变量
  ========================================================================== */
-$main-bgcolor: #8f8f8f;
+// $main-bgcolor: #8f8f8f;
+$main-bgcolor: #4f6c9d;
 $main-color: #fff;
 $main-red: #c50000;
 $main-green: #83ac14;
@@ -240,6 +241,71 @@ $ticket: '../images/ticket-back.png';
     background-image: url($cover-guide);
 }
 
-#logo {
+#cover-back {
+    top: 113px;
+    left: 0;
+    $cover-back: '../images/cover-back.png';
+    width: image-width($cover-back);
+    height: image-height($cover-back);
+    background-image: url($cover-back);
+}
+
+#mt-container {
+    bottom: 0;
+    left: 0;
+    width: 640px;
+    height: 188px;
+    // background: rgba(255, 255, 255, 0.4);
+}
+
+$moutain: '../images/moutain.png';
+#moutains {
+    top: 0;
+    left: -(image-width($moutain));
+    width: image-width($moutain)*2;
+    height: image-height($moutain);
+    // background: rgba(255, 0, 0, 0.3);
+}
+
+.moutain {
+    top: 0;
+    width: image-width($moutain);
+    height: image-height($moutain);
+    background-image: url($moutain);
+}
+
+#moutain1 {
+    left: 0;
+}
+
+#moutain2 {
+    left: image-width($moutain);
+}
+
+$trees: '../images/trees.png';
+#trees {
+    top: 140px;
+    left: -(image-width($trees))-3px;
+    width: image-width($trees)*2;
+    height: image-height($trees);
+    // background: rgba(0, 255, 0, 0.3);
+}
+
+.tree {
+    top: 0;
+    width: image-width($trees);
+    height: image-height($trees);
+    background-image: url($trees);
+}
+
+#tree1 {
+    left: 0;
+}
+
+#tree2 {
+    left: image-width($trees);
+}
+
+#logo, #cover {
     display: none;
 }
