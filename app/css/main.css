@@ -290,7 +290,7 @@ body {
   font-family: 'Avenir Next', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #4f6c9d;
+  background: #a3d0e3;
   color: #fff;
   overflow: hidden;
   font-size: 24px;
@@ -418,10 +418,16 @@ body {
   background-image: url("../images/cloud2.png");
 }
 
-.cloud-noline {
+.cloudl {
   width: 172px;
   height: 97px;
   background-image: url("../images/cloud3.png");
+}
+
+.clouds {
+  width: 146px;
+  height: 96px;
+  background-image: url("../images/cloud4.png");
 }
 
 #cloud3 {
@@ -432,6 +438,11 @@ body {
 #cloud4 {
   top: 255px;
   left: -18px;
+}
+
+#cloud5 {
+  top: 309px;
+  left: 498px;
 }
 
 #ticket {
@@ -635,7 +646,79 @@ body {
   background-image: url("../images/tap-guide.png");
 }
 
-#logo, #cover {
+#ms-container {
+  top: 98px;
+  left: -85px;
+  width: 812px;
+  height: 703px;
+  background-image: url("../images/ms-bg.png");
+}
+
+#ms-building1 {
+  top: -98px;
+  left: 181px;
+  width: 161px;
+  height: 489px;
+  background-image: url("../images/ms-building1.png");
+}
+
+#ms-building2 {
+  top: -98px;
+  left: 480px;
+  width: 166px;
+  height: 483px;
+  background-image: url("../images/ms-building2.png");
+}
+
+#ms-building3 {
+  top: -98px;
+  left: 255px;
+  width: 302px;
+  height: 569px;
+  background-image: url("../images/ms-building3.png");
+}
+
+#ms-tree {
+  top: 331px;
+  left: 95px;
+  width: 589px;
+  height: 131px;
+  background-image: url("../images/ms-tree.png");
+}
+
+#ms-water {
+  top: 453px;
+  left: 102px;
+  width: 609px;
+  height: 87px;
+  background-image: url("../images/ms-water.png");
+}
+
+#ms-people1 {
+  top: 392px;
+  left: 152px;
+  width: 503px;
+  height: 160px;
+  background-image: url("../images/ms-people1.png");
+}
+
+#ms-people2 {
+  top: 392px;
+  left: 153px;
+  width: 502px;
+  height: 160px;
+  background-image: url("../images/ms-people2.png");
+}
+
+#ms-tag {
+  top: 559px;
+  left: 131px;
+  width: 549px;
+  height: 96px;
+  background-image: url("../images/ms-tag.png");
+}
+
+#logo, #cover, #hlg, #ms {
   display: none;
 }
 

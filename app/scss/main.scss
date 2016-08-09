@@ -60,7 +60,7 @@ html, body {
  定义变量
  ========================================================================== */
 // $main-bgcolor: #8f8f8f;
-$main-bgcolor: #4f6c9d;
+$main-bgcolor: #a3d0e3;
 $main-color: #fff;
 $main-red: #c50000;
 $main-green: #83ac14;
@@ -198,11 +198,18 @@ body {
     background-image: url($cloud2);
 }
 
-.cloud-noline {
-    $cloud-noline: '../images/cloud3.png';
-    width: image-width($cloud-noline);
-    height: image-height($cloud-noline);
-    background-image: url($cloud-noline);
+.cloudl {
+    $cloudl: '../images/cloud3.png';
+    width: image-width($cloudl);
+    height: image-height($cloudl);
+    background-image: url($cloudl);
+}
+
+.clouds {
+    $clouds: '../images/cloud4.png';
+    width: image-width($clouds);
+    height: image-height($clouds);
+    background-image: url($clouds);
 }
 
 #cloud3 {
@@ -213,6 +220,11 @@ body {
 #cloud4 {
     top: 255px;
     left: -18px;
+}
+
+#cloud5 {
+    top: 309px;
+    left: 498px;
 }
 
 // cover start================================
@@ -443,7 +455,89 @@ $trees: '../images/trees.png';
     background-image: url($tap-guide);
 }
 
-#logo, #cover {
+// ms start==============================
+#ms-container {
+    top: 98px;
+    left: -85px;
+    $ms-bg: '../images/ms-bg.png';
+    width: image-width($ms-bg);
+    height: image-height($ms-bg);
+    background-image: url($ms-bg);
+}
+
+#ms-building1 {
+    top: -98px;
+    left: 181px;
+    $ms-building1: '../images/ms-building1.png';
+    width: image-width($ms-building1);
+    height: image-height($ms-building1);
+    background-image: url($ms-building1);
+}
+
+#ms-building2 {
+    top: -98px;
+    left: 480px;
+    $ms-building2: '../images/ms-building2.png';
+    width: image-width($ms-building2);
+    height: image-height($ms-building2);
+    background-image: url($ms-building2);
+}
+
+#ms-building3 {
+    top: -98px;
+    left: 255px;
+    $ms-building3: '../images/ms-building3.png';
+    width: image-width($ms-building3);
+    height: image-height($ms-building3);
+    background-image: url($ms-building3);
+}
+
+#ms-tree {
+    top: 331px;
+    left: 95px;
+    $ms-tree: '../images/ms-tree.png';
+    width: image-width($ms-tree);
+    height: image-height($ms-tree);
+    background-image: url($ms-tree);
+}
+
+#ms-water {
+    top: 453px;
+    left: 102px;
+    $ms-water: '../images/ms-water.png';
+    width: image-width($ms-water);
+    height: image-height($ms-water);
+    background-image: url($ms-water);
+}
+
+#ms-people1 {
+    top: 392px;
+    left: 152px;
+    $ms-people1: '../images/ms-people1.png';
+    width: image-width($ms-people1);
+    height: image-height($ms-people1);
+    background-image: url($ms-people1);
+}
+
+#ms-people2 {
+    top: 392px;
+    left: 153px;
+    $ms-people2: '../images/ms-people2.png';
+    width: image-width($ms-people2);
+    height: image-height($ms-people2);
+    background-image: url($ms-people2);
+}
+
+#ms-tag {
+    top: 559px;
+    left: 131px;
+    $ms-tag: '../images/ms-tag.png';
+    width: image-width($ms-tag);
+    height: image-height($ms-tag);
+    background-image: url($ms-tag);
+}
+
+#logo, #cover, #hlg, #ms {
     display: none;
 }
 
