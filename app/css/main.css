@@ -418,6 +418,22 @@ body {
   background-image: url("../images/cloud2.png");
 }
 
+.cloud-noline {
+  width: 172px;
+  height: 97px;
+  background-image: url("../images/cloud3.png");
+}
+
+#cloud3 {
+  top: 26px;
+  left: 394px;
+}
+
+#cloud4 {
+  top: 255px;
+  left: -18px;
+}
+
 #ticket {
   top: 387px;
   left: 56px;
@@ -514,8 +530,117 @@ body {
   left: 653px;
 }
 
+#hlg-container {
+  top: 0;
+  left: -86px;
+  width: 812px;
+  height: 801px;
+  background-image: url("../images/hlg-bg.png");
+}
+
+#water1 {
+  top: 318px;
+  left: 203px;
+  width: 130px;
+  height: 258px;
+  background-image: url("../images/water1.png");
+}
+
+#water2 {
+  top: 318px;
+  left: 203px;
+  width: 130px;
+  height: 258px;
+  background-image: url("../images/water2.png");
+}
+
+#jump-people {
+  top: 451px;
+  left: 372px;
+  width: 214px;
+  height: 45px;
+  background-image: url("../images/jump-people.png");
+}
+
+#boat {
+  top: 466px;
+  left: 446px;
+  width: 273px;
+  height: 109px;
+  background-image: url("../images/boat.png");
+}
+
+#swing-people {
+  top: 463px;
+  left: 652px;
+  width: 67px;
+  height: 55px;
+  background-image: url("../images/swing-people.png");
+}
+
+#hlg-people {
+  top: 432px;
+  left: 317px;
+  width: 340px;
+  height: 179px;
+  background-image: url("../images/hlg-people.png");
+}
+
+#hlg-mt {
+  top: 549px;
+  left: 349px;
+  width: 239px;
+  height: 109px;
+  background-image: url("../images/hlg-mt.png");
+}
+
+#hlg-banner {
+  top: 657px;
+  left: 132px;
+  width: 549px;
+  height: 96px;
+  background-image: url("../images/hlg-banner.png");
+}
+
+#ticket-container {
+  bottom: 0;
+  left: 0;
+  width: 640px;
+  height: 242px;
+  background-image: url("../images/plug-bg.png");
+  overflow: hidden;
+}
+
+#plug-top {
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 87px;
+  background-image: url("../images/plug-top.png");
+}
+
+#ticket-plug {
+  top: 93px;
+  left: 236px;
+  width: 171px;
+  height: 364px;
+  background-image: url("../images/ticket-plug.png");
+}
+
+#tap-guide {
+  top: 159px;
+  left: 455px;
+  width: 109px;
+  height: 36px;
+  background-image: url("../images/tap-guide.png");
+}
+
 #logo, #cover {
   display: none;
+}
+
+#water2 {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -198,6 +198,23 @@ body {
     background-image: url($cloud2);
 }
 
+.cloud-noline {
+    $cloud-noline: '../images/cloud3.png';
+    width: image-width($cloud-noline);
+    height: image-height($cloud-noline);
+    background-image: url($cloud-noline);
+}
+
+#cloud3 {
+    top: 26px;
+    left: 394px;
+}
+
+#cloud4 {
+    top: 255px;
+    left: -18px;
+}
+
 // cover start================================
 $ticket: '../images/ticket-back.png';
 
@@ -306,6 +323,130 @@ $trees: '../images/trees.png';
     left: image-width($trees);
 }
 
+// hlg start=========================
+#hlg-container {
+    top: 0;
+    left: -86px;
+    $hlg: '../images/hlg-bg.png';
+    width: image-width($hlg);
+    height: image-height($hlg);
+    background-image: url($hlg);
+}
+
+#water1 {
+    top: 318px;
+    left: 203px;
+    $water1: '../images/water1.png';
+    width: image-width($water1);
+    height: image-height($water1);
+    background-image: url($water1);
+}
+
+#water2 {
+    top: 318px;
+    left: 203px;
+    $water2: '../images/water2.png';
+    width: image-width($water2);
+    height: image-height($water2);
+    background-image: url($water2);
+}
+
+#jump-people {
+    top: 451px;
+    left: 372px;
+    $jump-people: '../images/jump-people.png';
+    width: image-width($jump-people);
+    height: image-height($jump-people);
+    background-image: url($jump-people);
+}
+
+#boat {
+    top: 466px;
+    left: 446px;
+    $boat: '../images/boat.png';
+    width: image-width($boat);
+    height: image-height($boat);
+    background-image: url($boat);
+}
+
+#swing-people {
+    top: 463px;
+    left: 652px;
+    $swing-people: '../images/swing-people.png';
+    width: image-width($swing-people);
+    height: image-height($swing-people);
+    background-image: url($swing-people);
+}
+
+#hlg-people {
+    top: 432px;
+    left: 317px;
+    $hlg-people: '../images/hlg-people.png';
+    width: image-width($hlg-people);
+    height: image-height($hlg-people);
+    background-image: url($hlg-people);
+}
+
+#hlg-mt {
+    top: 549px;
+    left: 349px;
+    $hlg-mt: '../images/hlg-mt.png';
+    width: image-width($hlg-mt);
+    height: image-height($hlg-mt);
+    background-image: url($hlg-mt);
+}
+
+#hlg-banner {
+    top: 657px;
+    left: 132px;
+    $hlg-banner: '../images/hlg-banner.png';
+    width: image-width($hlg-banner);
+    height: image-height($hlg-banner);
+    background-image: url($hlg-banner);
+}
+
+// ticket container start=========
+#ticket-container {
+    bottom: 0;
+    left: 0;
+    $ticket-container: '../images/plug-bg.png';
+    width: image-width($ticket-container);
+    height: image-height($ticket-container);
+    background-image: url($ticket-container);
+    overflow: hidden;
+}
+
+#plug-top {
+    top: 0;
+    left: 0;
+    $plug-top: '../images/plug-top.png';
+    width: image-width($plug-top);
+    height: image-height($plug-top);
+    background-image: url($plug-top);
+}
+
+#ticket-plug {
+    top: 93px;
+    left: 236px;
+    $ticket-plug: '../images/ticket-plug.png';
+    width: image-width($ticket-plug);
+    height: image-height($ticket-plug);
+    background-image: url($ticket-plug);
+}
+
+#tap-guide {
+    top: 159px;
+    left: 455px;
+    $tap-guide: '../images/tap-guide.png';
+    width: image-width($tap-guide);
+    height: image-height($tap-guide);
+    background-image: url($tap-guide);
+}
+
 #logo, #cover {
     display: none;
+}
+
+#water2 {
+    visibility: hidden;
 }
