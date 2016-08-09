@@ -59,8 +59,8 @@ html, body {
 /* ==========================================================================
  定义变量
  ========================================================================== */
-// $main-bgcolor: #8f8f8f;
-$main-bgcolor: #a3d0e3;
+$main-bgcolor: #8f8f8f;
+// $main-bgcolor: #5d5f77;
 $main-color: #fff;
 $main-red: #c50000;
 $main-green: #83ac14;
@@ -163,7 +163,37 @@ body {
         align: center;
     }
     color: #fff;
-    z-index: 100;
+    z-index: 10;
+}
+
+// music=======================================================================
+#music-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 58px;
+    height: 58px;
+    margin: 24px;
+}
+
+#music-control-main {
+    position: absolute;
+    $music-bg: '../images/music-bg.png';
+    width: image-width($music-bg);
+    height: image-height($music-bg);
+    // background-image: url($music-bg);
+}
+
+.music-control-icon {
+    position: absolute;
+    $music-icon: '../images/music-icon.png';
+    width: image-width($music-icon);
+    height: image-height($music-icon);
+    // background-image: url($music-icon);
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
 }
 
 // common start==========================
@@ -178,6 +208,7 @@ body {
         left: -(image-width($logo)/2);
     }
     background-image: url($logo);
+    z-index: 10;
 }
 
 #cloud1 {
@@ -186,7 +217,7 @@ body {
     $cloud1: '../images/cloud1.png';
     width: image-width($cloud1);
     height: image-height($cloud1);
-    background-image: url($cloud1);
+    // background-image: url($cloud1);
 }
 
 #cloud2 {
@@ -195,21 +226,21 @@ body {
     $cloud2: '../images/cloud2.png';
     width: image-width($cloud2);
     height: image-height($cloud2);
-    background-image: url($cloud2);
+    // background-image: url($cloud2);
 }
 
 .cloudl {
     $cloudl: '../images/cloud3.png';
     width: image-width($cloudl);
     height: image-height($cloudl);
-    background-image: url($cloudl);
+    // background-image: url($cloudl);
 }
 
 .clouds {
     $clouds: '../images/cloud4.png';
     width: image-width($clouds);
     height: image-height($clouds);
-    background-image: url($clouds);
+    // background-image: url($clouds);
 }
 
 #cloud3 {
@@ -240,7 +271,7 @@ $ticket: '../images/ticket-back.png';
 #ticket-back {
     width: image-width($ticket);
     height: image-height($ticket);
-    background-image: url($ticket);
+    // background-image: url($ticket);
 }
 
 #ticket-front {
@@ -249,7 +280,7 @@ $ticket: '../images/ticket-back.png';
     $ticket-front: '../images/ticket-front.png';
     width: image-width($ticket-front);
     height: image-height($ticket-front);
-    background-image: url($ticket-front);
+    // background-image: url($ticket-front);
 }
 
 #cover-content {
@@ -258,7 +289,7 @@ $ticket: '../images/ticket-back.png';
     $cover-content: '../images/cover-content.png';
     width: image-width($cover-content);
     height: image-height($cover-content);
-    background-image: url($cover-content);
+    // background-image: url($cover-content);
 }
 
 #cover-guide {
@@ -267,7 +298,7 @@ $ticket: '../images/ticket-back.png';
     $cover-guide: '../images/cover-guide.png';
     width: image-width($cover-guide);
     height: image-height($cover-guide);
-    background-image: url($cover-guide);
+    // background-image: url($cover-guide);
 }
 
 #cover-back {
@@ -276,7 +307,7 @@ $ticket: '../images/ticket-back.png';
     $cover-back: '../images/cover-back.png';
     width: image-width($cover-back);
     height: image-height($cover-back);
-    background-image: url($cover-back);
+    // background-image: url($cover-back);
 }
 
 #mt-container {
@@ -300,7 +331,7 @@ $moutain: '../images/moutain.png';
     top: 0;
     width: image-width($moutain);
     height: image-height($moutain);
-    background-image: url($moutain);
+    // background-image: url($moutain);
 }
 
 #moutain1 {
@@ -324,7 +355,7 @@ $trees: '../images/trees.png';
     top: 0;
     width: image-width($trees);
     height: image-height($trees);
-    background-image: url($trees);
+    // background-image: url($trees);
 }
 
 #tree1 {
@@ -342,7 +373,7 @@ $trees: '../images/trees.png';
     $hlg: '../images/hlg-bg.png';
     width: image-width($hlg);
     height: image-height($hlg);
-    background-image: url($hlg);
+    // background-image: url($hlg);
 }
 
 #water1 {
@@ -351,7 +382,7 @@ $trees: '../images/trees.png';
     $water1: '../images/water1.png';
     width: image-width($water1);
     height: image-height($water1);
-    background-image: url($water1);
+    // background-image: url($water1);
 }
 
 #water2 {
@@ -360,7 +391,7 @@ $trees: '../images/trees.png';
     $water2: '../images/water2.png';
     width: image-width($water2);
     height: image-height($water2);
-    background-image: url($water2);
+    // background-image: url($water2);
 }
 
 #jump-people {
@@ -369,7 +400,7 @@ $trees: '../images/trees.png';
     $jump-people: '../images/jump-people.png';
     width: image-width($jump-people);
     height: image-height($jump-people);
-    background-image: url($jump-people);
+    // background-image: url($jump-people);
 }
 
 #boat {
@@ -378,7 +409,7 @@ $trees: '../images/trees.png';
     $boat: '../images/boat.png';
     width: image-width($boat);
     height: image-height($boat);
-    background-image: url($boat);
+    // background-image: url($boat);
 }
 
 #swing-people {
@@ -387,7 +418,7 @@ $trees: '../images/trees.png';
     $swing-people: '../images/swing-people.png';
     width: image-width($swing-people);
     height: image-height($swing-people);
-    background-image: url($swing-people);
+    // background-image: url($swing-people);
 }
 
 #hlg-people {
@@ -396,7 +427,7 @@ $trees: '../images/trees.png';
     $hlg-people: '../images/hlg-people.png';
     width: image-width($hlg-people);
     height: image-height($hlg-people);
-    background-image: url($hlg-people);
+    // background-image: url($hlg-people);
 }
 
 #hlg-mt {
@@ -405,7 +436,7 @@ $trees: '../images/trees.png';
     $hlg-mt: '../images/hlg-mt.png';
     width: image-width($hlg-mt);
     height: image-height($hlg-mt);
-    background-image: url($hlg-mt);
+    // background-image: url($hlg-mt);
 }
 
 #hlg-banner {
@@ -414,7 +445,7 @@ $trees: '../images/trees.png';
     $hlg-banner: '../images/hlg-banner.png';
     width: image-width($hlg-banner);
     height: image-height($hlg-banner);
-    background-image: url($hlg-banner);
+    // background-image: url($hlg-banner);
 }
 
 // ticket container start=========
@@ -424,7 +455,7 @@ $trees: '../images/trees.png';
     $ticket-container: '../images/plug-bg.png';
     width: image-width($ticket-container);
     height: image-height($ticket-container);
-    background-image: url($ticket-container);
+    // background-image: url($ticket-container);
     overflow: hidden;
 }
 
@@ -434,7 +465,7 @@ $trees: '../images/trees.png';
     $plug-top: '../images/plug-top.png';
     width: image-width($plug-top);
     height: image-height($plug-top);
-    background-image: url($plug-top);
+    // background-image: url($plug-top);
 }
 
 #ticket-plug {
@@ -443,7 +474,7 @@ $trees: '../images/trees.png';
     $ticket-plug: '../images/ticket-plug.png';
     width: image-width($ticket-plug);
     height: image-height($ticket-plug);
-    background-image: url($ticket-plug);
+    // background-image: url($ticket-plug);
 }
 
 #tap-guide {
@@ -452,7 +483,7 @@ $trees: '../images/trees.png';
     $tap-guide: '../images/tap-guide.png';
     width: image-width($tap-guide);
     height: image-height($tap-guide);
-    background-image: url($tap-guide);
+    // background-image: url($tap-guide);
 }
 
 // ms start==============================
@@ -462,7 +493,7 @@ $trees: '../images/trees.png';
     $ms-bg: '../images/ms-bg.png';
     width: image-width($ms-bg);
     height: image-height($ms-bg);
-    background-image: url($ms-bg);
+    // background-image: url($ms-bg);
 }
 
 #ms-building1 {
@@ -471,7 +502,7 @@ $trees: '../images/trees.png';
     $ms-building1: '../images/ms-building1.png';
     width: image-width($ms-building1);
     height: image-height($ms-building1);
-    background-image: url($ms-building1);
+    // background-image: url($ms-building1);
 }
 
 #ms-building2 {
@@ -480,7 +511,7 @@ $trees: '../images/trees.png';
     $ms-building2: '../images/ms-building2.png';
     width: image-width($ms-building2);
     height: image-height($ms-building2);
-    background-image: url($ms-building2);
+    // background-image: url($ms-building2);
 }
 
 #ms-building3 {
@@ -489,7 +520,7 @@ $trees: '../images/trees.png';
     $ms-building3: '../images/ms-building3.png';
     width: image-width($ms-building3);
     height: image-height($ms-building3);
-    background-image: url($ms-building3);
+    // background-image: url($ms-building3);
 }
 
 #ms-tree {
@@ -498,7 +529,7 @@ $trees: '../images/trees.png';
     $ms-tree: '../images/ms-tree.png';
     width: image-width($ms-tree);
     height: image-height($ms-tree);
-    background-image: url($ms-tree);
+    // background-image: url($ms-tree);
 }
 
 #ms-water {
@@ -507,7 +538,7 @@ $trees: '../images/trees.png';
     $ms-water: '../images/ms-water.png';
     width: image-width($ms-water);
     height: image-height($ms-water);
-    background-image: url($ms-water);
+    // background-image: url($ms-water);
 }
 
 #ms-people1 {
@@ -516,7 +547,7 @@ $trees: '../images/trees.png';
     $ms-people1: '../images/ms-people1.png';
     width: image-width($ms-people1);
     height: image-height($ms-people1);
-    background-image: url($ms-people1);
+    // background-image: url($ms-people1);
 }
 
 #ms-people2 {
@@ -525,7 +556,7 @@ $trees: '../images/trees.png';
     $ms-people2: '../images/ms-people2.png';
     width: image-width($ms-people2);
     height: image-height($ms-people2);
-    background-image: url($ms-people2);
+    // background-image: url($ms-people2);
 }
 
 #ms-tag {
@@ -534,13 +565,13 @@ $trees: '../images/trees.png';
     $ms-tag: '../images/ms-tag.png';
     width: image-width($ms-tag);
     height: image-height($ms-tag);
-    background-image: url($ms-tag);
+    // background-image: url($ms-tag);
 }
 
-#logo, #cover, #hlg, #ms {
+#cover, #hlg, #ms, #ticket-container, #clouds {
     display: none;
 }
 
-#water2 {
+#music-control, #water2 {
     visibility: hidden;
 }
