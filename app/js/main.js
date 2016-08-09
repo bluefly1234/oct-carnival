@@ -196,6 +196,43 @@ function goToCover() {
                 .to('body', 0.6, {backgroundColor: $color1}, 'toCoverStart');
 }
 
+// 显示封面云朵
+function showCoverClouds() {
+    var coverCloudsShow = new TimelineMax({
+        onComplete: function () {
+            cloud1Float.play(0);
+            cloud2Float.play(0);
+        }
+    });
+    coverCloudsShow.set('#clouds', {display: 'block', autoAlpha: 1})
+    .set('.cloud-noline', {autoAlpha: 0})
+    .fromTo('#cloud1', 0.8, {y: -400}, {y: 0, ease: Back.easeOut.config(1)})
+    .fromTo('#cloud2', 0.8, {y: -400}, {y: 0, ease: Back.easeOut.config(1)}, '-=0.7')
+    .add('#cloud12Float')
+    .to('#cloud1', 6, {x: 473, ease: Power0.easeNone}, '#cloud12Float')
+    .to('#cloud2', 7, {x: 242, ease: Power0.easeNone}, '#cloud12Float')
+    .set('#cloud1', {x: -146})
+    .set('#cloud2', {x: -194})
+}
+
+// 云朵1飘动
+var cloud1Float = new TimelineMax({
+    paused: true,
+    repeat: -1
+});
+
+cloud1Float.fromTo('#cloud1', 12, {x: -146}, {x: 640, ease: Power0.easeNone});
+
+
+// 云朵2飘动
+var cloud2Float = new TimelineMax({
+    paused: true,
+    repeat: -1
+});
+
+cloud2Float.fromTo('#cloud2', 16, {x: -194}, {x: 640, ease: Power0.easeNone});
+
+
 // 封面
 function showCover() {
     var coverShow = new TimelineMax();
@@ -224,6 +261,7 @@ function showCover() {
             y: 0,
             onComplete: function () {
                 coverGuideMove.play(0); // 播放点击票指示
+                showCoverClouds();
             }
         }, 'coverContent+=0.2')
 }
@@ -252,6 +290,29 @@ var mtMove = new TimelineMax({
 mtMove.add('mtStart')
     .to('#moutains', 80, {x: 814, ease: Power0.easeNone, repeat: -1}, 'mtStart')
     .to('#trees', 30, {x: 653, ease: Power0.easeNone, repeat: -1}, 'mtStart');
+
+// 封面消失
+function hideCover() {
+    var coverHide = new TimelineMax({
+        onStart: function () {
+            coverGuideMove.pause(0); // 暂停coverGuide
+        },
+        onComplete: function () {
+            mtMove.pause(0); // 暂停山树移动
+            ticketBreath.pause(0); // 暂停票呼吸
+        }
+    });
+    coverHide.add('coverHideStart')
+    .to('#cover-content', 0.5, {autoAlpha: 0, y: -100}, 'coverHideStart')
+    .to('#cover-guide', 0.5, {autoAlpha: 0, y: 100}, 'coverHideStart')
+    .add('coverColorChange')
+    .to(['#mt-container', '#cover-back'], 0.5, {autoAlpha: 0}, 'coverColorChange')
+    .to('#ticket', 0.8, {x: 640, ease: Back.easeIn.config(1.2)}, 'coverColorChange-=0.3')
+    .to('body', 0.6, {backgroundColor: $color2}, 'coverColorChange');
+}
+
+// 点击封面票
+$('#ticket').on('touchstart', hideCover);
 
 
 (function($) {
