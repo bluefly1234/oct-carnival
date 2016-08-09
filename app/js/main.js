@@ -77,7 +77,7 @@ new mo.Loader(sourceArr,{
             delay: 2,
             onComplete: function () {
                 TweenMax.set('#music-control', {autoAlpha: 1});
-                // coverShow.play(0);
+                goToCover();
                 bgAud.play(); // 播放背景音乐
             }
         });
@@ -182,7 +182,78 @@ $("#music-control").on('touchstart', function(){
 });
 // music-control End------------------------------
 
-// 设置背景图片
+// 初始加载页至封面
+var ww = window.innerWidth;
+var wh = window.innerHeight;
+var dx = ww/2 - 40 - 177/2;
+var dy = wh/2 - 17 - 58/2;
+function goToCover() {
+    var loadToCover = new TimelineMax({
+        onStart: showCover
+    });
+    loadToCover.add('toCoverStart')
+                .to('#logo', 0.6, {x: -dx, y: -dy}, 'toCoverStart')
+                .to('body', 0.6, {backgroundColor: $color1}, 'toCoverStart');
+}
+
+// 封面
+function showCover() {
+    var coverShow = new TimelineMax();
+    coverShow.set('#cover', {display: 'block', autoAlpha: 1})
+        .add('coverStart')
+        .fromTo('#cover-back', 0.6, {autoAlpha: 0}, {autoAlpha: 1}, 'coverStart')
+        .fromTo('#mt-container', 0.8, {autoAlpha: 0, y: 400}, {
+            autoAlpha: 1,
+            y: 0,
+            onComplete: function () {
+                mtMove.play(0); // 山树开始移动
+            }
+        }, 'coverStart')
+        .add('coverContent')
+        .fromTo('#ticket', 0.8, {autoAlpha: 0, x: -640}, {
+            autoAlpha: 1,
+            x: 0,
+            ease: Back.easeOut.config(1),
+            onComplete: function () {
+                ticketBreath.play(0);
+            }
+        }, 'coverContent')
+        .fromTo('#cover-content', 0.8, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, 'coverContent+=0.2')
+        .fromTo('#cover-guide', 0.8, {autoAlpha: 0, y: 100}, {
+            autoAlpha: 1,
+            y: 0,
+            onComplete: function () {
+                coverGuideMove.play(0); // 播放点击票指示
+            }
+        }, 'coverContent+=0.2')
+}
+
+// 封面点击票指示
+var coverGuideMove = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+coverGuideMove.to('#cover-guide', 1, {y: -30, ease: Power1.easeInOut});
+
+// 票呼吸
+var ticketBreath = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+ticketBreath.to('#ticket-back', 0.6, {autoAlpha: 0, ease: Power1.easeInOut});
+
+// 山树移动
+var mtMove = new TimelineMax({
+    paused: true,
+});
+
+mtMove.add('mtStart')
+    .to('#moutains', 80, {x: 814, ease: Power0.easeNone, repeat: -1}, 'mtStart')
+    .to('#trees', 30, {x: 653, ease: Power0.easeNone, repeat: -1}, 'mtStart');
+
+
 (function($) {
     $(document).ready(function() {
         console.log('Ready');
