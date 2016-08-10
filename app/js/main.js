@@ -262,7 +262,6 @@ function showNolineCloud() {
     cloud5Float.play(0);
 }
 
-
 // 封面
 function showCover() {
     var coverShow = new TimelineMax();
@@ -331,6 +330,8 @@ function hideCover() {
         onComplete: function () {
             mtMove.pause(0); // 暂停山树移动
             ticketBreath.pause(0); // 暂停票呼吸
+            initPlugMachine(); // 初始化插票机
+            showHLG(); // 显示欢乐谷
         }
     });
     coverHide.add('coverHideStart')
@@ -344,6 +345,80 @@ function hideCover() {
 
 // 点击封面票
 $('#ticket').on('touchstart', hideCover);
+
+// 初始化插票机
+function initPlugMachine() {
+    var plugMachineShow = new TimelineMax({
+        onComplete: showTicketAuto
+    });
+    plugMachineShow.set('#ticket-container', {display: 'block'})
+    .fromTo('#ticket-container', 0.6, {autoAlpha: 0, y: 300}, {autoAlpha: 1, y: 0, ease: Power2.easeOut})
+}
+
+// 第一次票自动打卡
+function showTicketAuto() {
+    var ticketShowAuto = new TimelineMax({
+        // onComplete: showHLG
+        onComplete: function () {
+            waterfallPlay.play(0);
+            jfMove.play(0);
+            boatSwing.play(0);
+        }
+    });
+    ticketShowAuto.fromTo('#ticket-plug', 0.6, {autoAlpha: 0, y: 300}, {autoAlpha: 1, y: 0})
+    .to('#ticket-plug', 1, {y: -364, ease: Power1.easeIn})
+    .to('#ticket-plug', 0.5, {autoAlpha: 0, ease: Power1.easeIn}, '-=0.5')
+}
+
+// 显示欢乐谷
+function showHLG() {
+    var hlgShow = new TimelineMax({
+        onComplete: function () {
+            // waterfallPlay.play(0);
+        }
+    });
+    hlgShow.set('#hlg', {display: 'block'})
+    .fromTo('#hlg', 0.8, {x: -726}, {x: 0, ease: Power3.easeOut})
+}
+
+// 欢乐谷瀑布
+var waterfallPlay = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 0.1
+});
+
+waterfallPlay.add('waterfallStart')
+            .set('.water', {autoAlpha: 0}, 'waterfallStart')
+            .set('#water1', {autoAlpha: 1}, 'waterfallStart')
+            .set('.water', {autoAlpha: 0}, 'waterfallStart+=0.1')
+            .set('#water2', {autoAlpha: 1}, 'waterfallStart+=0.1');
+
+// 欢乐谷尖峰时刻
+var jfMove = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 1
+});
+
+jfMove.to('#jump-people', 4, {y: -210})
+    .to('#jump-people', 0.8, {y: 0, ease: Power2.easeInOut}, '+=0.5');
+
+// 船摇晃
+var boatSwing = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+boatSwing.to('#swing-people', 2, {
+    bezier:[
+        {x:-110, y:32},
+        {x:-200, y:0}
+    ],
+    rotation: 70,
+    ease:Power1.easeInOut
+});
+
 
 
 (function($) {
