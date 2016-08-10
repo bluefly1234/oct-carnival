@@ -3,18 +3,20 @@
   Blog: http://kalechao87.github.io/
 **/
 // 页面背景色变量
-$color1 = '#64caff'; // 封面第一页
-$color2 = '#4f6c9d'; // 第二页
-$color3 = '#a3d0e3'; // 第三页
-$color4 = '#5d5f77'; // 第四页
-$color5 = ''; // 第五页
-$color6 = '#454e8d'; // 第六页
-$color7 = '#0f0c24'; // 第七页
-$color8 = '#9f7954'; // 第八页
-$color9 = '#422a5c'; // 第九页
-$color10 = '#4ba9d5'; // 第十页
-$color11 = '#3870aa'; // 第十一页
-$color11 = '#ff4750'; // 第十二页
+var $color1 = '#64caff'; // 封面第一页
+var $color2 = '#4f6c9d'; // 第二页
+var $color3 = '#a3d0e3'; // 第三页
+var $color4 = '#5d5f77'; // 第四页
+var $color5 = ''; // 第五页
+var $color6 = '#454e8d'; // 第六页
+var $color7 = '#0f0c24'; // 第七页
+var $color8 = '#9f7954'; // 第八页
+var $color9 = '#422a5c'; // 第九页
+var $color10 = '#4ba9d5'; // 第十页
+var $color11 = '#3870aa'; // 第十一页
+var $color11 = '#ff4750'; // 第十二页
+
+var curPage; // 当前页
 
 // 预加载
 var sourceArr = [
@@ -331,7 +333,7 @@ function hideCover() {
             mtMove.pause(0); // 暂停山树移动
             ticketBreath.pause(0); // 暂停票呼吸
             initPlugMachine(); // 初始化插票机
-            showHLG(); // 显示欢乐谷
+            // showHLG(); // 显示欢乐谷
         }
     });
     coverHide.add('coverHideStart')
@@ -358,23 +360,95 @@ function initPlugMachine() {
 // 第一次票自动打卡
 function showTicketAuto() {
     var ticketShowAuto = new TimelineMax({
-        // onComplete: showHLG
-        onComplete: function () {
-            waterfallPlay.play(0);
-            jfMove.play(0);
-            boatSwing.play(0);
-        }
+        onComplete: showHLG,
+        // onComplete: function () {
+        //     waterfallPlay.play(0);
+        //     jfMove.play(0);
+        //     boatSwing.play(0);
+        // }
     });
     ticketShowAuto.fromTo('#ticket-plug', 0.6, {autoAlpha: 0, y: 300}, {autoAlpha: 1, y: 0})
     .to('#ticket-plug', 1, {y: -364, ease: Power1.easeIn})
     .to('#ticket-plug', 0.5, {autoAlpha: 0, ease: Power1.easeIn}, '-=0.5')
+    .set('#ticket-plug', {y: 0})
 }
+
+// 重复打卡功能
+function showTicket() {
+    var ticketShow = new TimelineMax({
+        onComplete: function () {
+            // ticketHang.play(0); // 票悬浮
+            showTapGuide();
+        }
+    });
+    ticketShow.fromTo('#ticket-plug', 0.6, {autoAlpha: 0, y: 300}, {autoAlpha: 1, y: 0});
+}
+
+function checkTicket() {
+    var ticketCheckHide = new TimelineMax({
+        onStart: hideTapGuide,
+        onComplete: goWhichPage
+    });
+    ticketCheckHide.to('#ticket-plug', 1, {y: -364, ease: Power1.easeIn})
+    .to('#ticket-plug', 0.5, {autoAlpha: 0, ease: Power1.easeIn}, '-=0.5')
+    .set('#ticket-plug', {y: 0});
+}
+
+// 点击check票
+$('#ticket-plug').on('touchstart', checkTicket);
+
+// 判断去哪页
+function goWhichPage() {
+    if (curPage=='HLG') {
+        hlgToMs(); // 欢乐谷去民俗村
+    }
+}
+
+// 票悬停
+var ticketHang = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true,
+});
+ticketHang.to('#ticket-plug', 1.2, {y: 20, ease: Power1.easeInOut});
+
+// 手指指示
+function showTapGuide() {
+    var tapGuideShow = new TimelineMax({
+        onComplete: function () {
+            tapGuideMove.play(0);
+        }
+    });
+    tapGuideShow.fromTo('#tap-guide', 0.5, {autoAlpha: 0}, {autoAlpha: 1});
+}
+
+// 隐藏手指指示
+function hideTapGuide() {
+    var tapGuideHide = new TimelineMax({
+        onComplete: function () {
+            tapGuideMove.pause(0); // 暂停手指点击指示
+        }
+    });
+    tapGuideHide.to('#tap-guide', 0.5, {autoAlpha: 0});
+}
+
+// 手指指示左右移动
+var tapGuideMove = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+tapGuideMove.to('#tap-guide', 0.8, {x: -30, ease: Power1.easeInOut});
 
 // 显示欢乐谷
 function showHLG() {
     var hlgShow = new TimelineMax({
         onComplete: function () {
-            // waterfallPlay.play(0);
+            curPage = 'HLG'; // 欢乐谷
+            waterfallPlay.play(0); // 瀑布
+            jfMove.play(0); // 尖峰时刻
+            boatSwing.play(0); // 船摇动
+            showTicket(); // 出现票
         }
     });
     hlgShow.set('#hlg', {display: 'block'})
@@ -418,6 +492,23 @@ boatSwing.to('#swing-people', 2, {
     rotation: 70,
     ease:Power1.easeInOut
 });
+
+// 欢乐谷去民俗村
+function hlgToMs() {
+    var msShow = new TimelineMax({
+        onComplete: function () {
+            curPage = 'MS'; // 民俗村
+            waterfallPlay.pause(0); // 瀑布暂停
+            jfMove.pause(0); // 尖峰时刻暂停
+            boatSwing.pause(0); // 船摇动暂停
+        }
+    });
+    msShow.set('#ms', {display: 'block'})
+    .add('msStart')
+    .fromTo('#ms', 0.8, {x: -727}, {x: 0, ease: Power3.easeInOut}, 'msStart')
+    .to('#hlg', 0.8, {x: 726, ease: Power3.easeInOut}, 'msStart')
+    .set('#hlg', {display: 'none'})
+}
 
 
 
