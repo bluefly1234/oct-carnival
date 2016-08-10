@@ -231,6 +231,37 @@ var cloud21Float = new TimelineMax({
 
 cloud21Float.fromTo('#cloud21', 18, {x: 0}, {x: 834, ease: Power0.easeNone});
 
+// 云朵3飘动
+var cloud3Float = new TimelineMax({
+    paused: true,
+    repeat: -1
+});
+
+cloud3Float.fromTo('#cloud3', 20, {x: 0}, {x: 812, ease: Power0.easeNone});
+
+// 云朵4飘动
+var cloud4Float = new TimelineMax({
+    paused: true,
+    repeat: -1
+});
+
+cloud4Float.fromTo('#cloud4', 29, {x: 0}, {x: 812, ease: Power0.easeNone});
+
+// 云朵5飘动
+var cloud5Float = new TimelineMax({
+    paused: true,
+    repeat: -1
+});
+
+cloud5Float.fromTo('#cloud5', 17, {x: 0}, {x: 786, ease: Power0.easeNone});
+
+function showNolineCloud() {
+    TweenMax.set('.cloud-noline', {autoAlpha: 1});
+    cloud3Float.play(0);
+    cloud4Float.play(0);
+    cloud5Float.play(0);
+}
+
 
 // 封面
 function showCover() {
@@ -295,6 +326,7 @@ function hideCover() {
     var coverHide = new TimelineMax({
         onStart: function () {
             coverGuideMove.pause(0); // 暂停coverGuide
+            showNolineCloud(); // 播放无线云动画
         },
         onComplete: function () {
             mtMove.pause(0); // 暂停山树移动
