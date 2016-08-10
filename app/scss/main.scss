@@ -220,6 +220,15 @@ body {
     // background-image: url($cloud1);
 }
 
+#cloud11 {
+    top: -322px;
+    left: -146px;
+    $cloud1: '../images/cloud1.png';
+    width: image-width($cloud1);
+    height: image-height($cloud1);
+    // background-image: url($cloud1);
+}
+
 #cloud2 {
     top: -250px;
     left: 398px;
@@ -228,6 +237,17 @@ body {
     height: image-height($cloud2);
     // background-image: url($cloud2);
 }
+
+#cloud21 {
+    top: -250px;
+    left: -194px;
+    $cloud2: '../images/cloud2.png';
+    width: image-width($cloud2);
+    height: image-height($cloud2);
+    // background-image: url($cloud2);
+}
+
+
 
 .cloudl {
     $cloudl: '../images/cloud3.png';

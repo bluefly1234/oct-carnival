@@ -103,8 +103,8 @@ function setBgImages() {
     $('.tree').css('background-image', 'url(images/trees.png)');
 
     // clouds
-    $('#cloud1').css('background-image', 'url(images/cloud1.png)');
-    $('#cloud2').css('background-image', 'url(images/cloud2.png)');
+    $('#cloud1, #cloud11').css('background-image', 'url(images/cloud1.png)');
+    $('#cloud2, #cloud21').css('background-image', 'url(images/cloud2.png)');
     $('.cloudl').css('background-image', 'url(images/cloud3.png)');
     $('.clouds').css('background-image', 'url(images/cloud4.png)');
 
@@ -200,8 +200,8 @@ function goToCover() {
 function showCoverClouds() {
     var coverCloudsShow = new TimelineMax({
         onComplete: function () {
-            cloud1Float.play(0);
-            cloud2Float.play(0);
+            cloud11Float.play(0);
+            cloud21Float.play(0);
         }
     });
     coverCloudsShow.set('#clouds', {display: 'block', autoAlpha: 1})
@@ -211,26 +211,25 @@ function showCoverClouds() {
     .add('#cloud12Float')
     .to('#cloud1', 6, {x: 473, ease: Power0.easeNone}, '#cloud12Float')
     .to('#cloud2', 7, {x: 242, ease: Power0.easeNone}, '#cloud12Float')
-    .set('#cloud1', {x: -146})
-    .set('#cloud2', {x: -194})
+    .set(['#cloud1', '#cloud2'], {display: 'none'})
 }
 
 // 云朵1飘动
-var cloud1Float = new TimelineMax({
+var cloud11Float = new TimelineMax({
     paused: true,
     repeat: -1
 });
 
-cloud1Float.fromTo('#cloud1', 12, {x: -146}, {x: 640, ease: Power0.easeNone});
+cloud11Float.fromTo('#cloud11', 12, {x: 0}, {x: 786, ease: Power0.easeNone});
 
 
 // 云朵2飘动
-var cloud2Float = new TimelineMax({
+var cloud21Float = new TimelineMax({
     paused: true,
     repeat: -1
 });
 
-cloud2Float.fromTo('#cloud2', 16, {x: -194}, {x: 640, ease: Power0.easeNone});
+cloud21Float.fromTo('#cloud21', 18, {x: 0}, {x: 834, ease: Power0.easeNone});
 
 
 // 封面

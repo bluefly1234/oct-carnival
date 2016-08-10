@@ -437,9 +437,23 @@ body {
   height: 480px;
 }
 
+#cloud11 {
+  top: -322px;
+  left: -146px;
+  width: 146px;
+  height: 480px;
+}
+
 #cloud2 {
   top: -250px;
   left: 398px;
+  width: 194px;
+  height: 451px;
+}
+
+#cloud21 {
+  top: -250px;
+  left: -194px;
   width: 194px;
   height: 451px;
 }
