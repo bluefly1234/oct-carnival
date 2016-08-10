@@ -401,6 +401,8 @@ $('#ticket-plug').on('touchstart', checkTicket);
 function goWhichPage() {
     if (curPage=='HLG') {
         hlgToMs(); // 欢乐谷去民俗村
+    }else if (curPage=='MS') {
+        alert('到啤酒节，开发中');
     }
 }
 
@@ -501,14 +503,35 @@ function hlgToMs() {
             waterfallPlay.pause(0); // 瀑布暂停
             jfMove.pause(0); // 尖峰时刻暂停
             boatSwing.pause(0); // 船摇动暂停
+            peopleWater.play(0);
+
+            showTicket(); // 出现票
         }
     });
     msShow.set('#ms', {display: 'block'})
     .add('msStart')
+    .to('body', 0.6, {backgroundColor: $color3}, 'msStart')
     .fromTo('#ms', 0.8, {x: -727}, {x: 0, ease: Power3.easeInOut}, 'msStart')
     .to('#hlg', 0.8, {x: 726, ease: Power3.easeInOut}, 'msStart')
     .set('#hlg', {display: 'none'})
+    .fromTo('#ms-building1', 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0})
+    .fromTo('#ms-building2', 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo('#ms-building3', 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo(['#ms-people1', '#ms-water'], 0.6, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#ms-tag', 0.6, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, '-=0.5');
 }
+
+// 村民泼水
+var peopleWater = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 0.5
+});
+peopleWater.add('waterStart')
+.set('.ms-people', {autoAlpha: 0}, 'waterStart')
+.set('#ms-people1', {autoAlpha: 1}, 'waterStart')
+.set('.ms-people', {autoAlpha: 0}, 'waterStart+=0.5')
+.set('#ms-people2', {autoAlpha: 1}, 'waterStart+=0.5');
 
 
 

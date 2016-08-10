@@ -731,7 +731,7 @@ body {
   display: none;
 }
 
-#music-control, #water2, #tap-guide, #ticket-plug {
+#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2 {
   visibility: hidden;
 }
 
