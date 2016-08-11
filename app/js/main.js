@@ -495,8 +495,12 @@ function goWhichPage() {
     }else if (curPage=='WD') {
         wdToHt(); // 世界之窗去花田
     }else if (curPage=='HT') {
-        alert('云南华侨城设计在加动作所需图素,此页当前为静态，后续添加动画');
+        alert('云南华侨城设计在加动画所需图素,此页当前为静态，后续添加动画');
         htToYn(); // 花田去云南
+    }else if (curPage=='YN') {
+        ynToTz(); // 云南去泰州
+    }else if (curPage=='TZ') {
+        alert('去创意园，制作中~');
     }
 }
 
@@ -760,6 +764,50 @@ function htToYn() {
     .to('#ht', 0.8, {x: 726, ease: Power3.easeInOut}, 'ynStart')
     .set('#ht', {display: 'none'})
 }
+
+// 云南去泰州
+function ynToTz() {
+    var tzShow = new TimelineMax({
+        onComplete: function () {
+            curPage = 'TZ'; // 泰州
+
+            tzPeopleSwitch.play(0); // 泰州人物切换
+            tzLightBreath.play(0); // 泰州顶光呼吸
+
+            showTicket(); // 出现票
+        }
+    });
+
+    tzShow.set('#tz', {display: 'block'})
+    .add('tzStart')
+    .to('body', 0.6, {backgroundColor: $color7}, 'tzStart')
+    .fromTo('#tz', 0.8, {x: -727}, {x: 0, ease: Power3.easeInOut}, 'tzStart')
+    .to('#yn', 0.8, {x: 726, ease: Power3.easeInOut}, 'tzStart')
+    .set('#yn', {display: 'none'})
+    .fromTo('#tz-moon', 0.8, {autoAlpha: 0, x: 200, y: -200}, {autoAlpha: 1, x: 0, y: 0})
+    .fromTo('#tz-top-people1', 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0})
+    .fromTo('#tz-tag', 0.6, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, '-=0.5');
+}
+
+// 泰州人物切换
+var tzPeopleSwitch = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 0.5
+});
+tzPeopleSwitch.add('tzSwitchStart')
+.set(['.tz-top-people', '.tz-bottom-people'], {autoAlpha: 0}, 'tzSwitchStart')
+.set(['#tz-top-people1', '#tz-bottom-people1', '#spotlights', '#tz-ribbon'], {autoAlpha: 1}, 'tzSwitchStart')
+.set(['.tz-top-people', '.tz-bottom-people', '#spotlights', '#tz-ribbon'], {autoAlpha: 0}, 'tzSwitchStart+=0.5')
+.set(['#tz-top-people2', '#tz-bottom-people2'], {autoAlpha: 1}, 'tzSwitchStart+=0.5');
+
+// 光
+var tzLightBreath = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+tzLightBreath.fromTo('#tz-top-light', 0.8, {autoAlpha: 0}, {autoAlpha: 1, ease: Power2.easeInOut});
 
 
 (function($) {
