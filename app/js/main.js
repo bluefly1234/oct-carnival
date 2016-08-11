@@ -456,6 +456,8 @@ function goWhichPage() {
         msToWd(); // 民俗村去世界之窗
     }else if (curPage=='WD') {
         wdToHt(); // 世界之窗去花田
+    }else if (curPage=='HT') {
+        alert('第六页云南华侨城设计在加图素,后面会先跳过此页动画');
     }
 }
 
@@ -644,6 +646,7 @@ airShipFloat.to('#wd-airship', 1.2, {y: 40, ease: Power1.easeInOut});
 function wdToHt() {
     var htShow = new TimelineMax({
         onComplete: function () {
+            curPage = 'HT'; // 花田
             airShipFly.pause(0); // 飞艇漂浮停止
             airShipFloat.pause(0); // 飞艇悬浮停止
             peopleCheer.pause(0); // 人物举杯停止
@@ -682,8 +685,8 @@ var htBalloonFloat = new TimelineMax({
 });
 
 htBalloonFloat.add('balloonStart')
-.to('#ht-balloonb', 10, {y: -70, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart')
-.to('#ht-balloons', 17, {y: -160, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart');
+.to('#ht-balloonb', 6, {y: -70, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart')
+.to('#ht-balloons', 13, {y: -160, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart');
 
 
 (function($) {
