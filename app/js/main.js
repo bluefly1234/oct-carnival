@@ -455,7 +455,7 @@ function goWhichPage() {
     }else if (curPage=='MS') {
         msToWd(); // 民俗村去世界之窗
     }else if (curPage=='WD') {
-
+        wdToHt(); // 世界之窗去花田
     }
 }
 
@@ -640,6 +640,50 @@ var airShipFloat = new TimelineMax({
     yoyo: true
 });
 airShipFloat.to('#wd-airship', 1.2, {y: 40, ease: Power1.easeInOut});
+
+function wdToHt() {
+    var htShow = new TimelineMax({
+        onComplete: function () {
+            airShipFly.pause(0); // 飞艇漂浮停止
+            airShipFloat.pause(0); // 飞艇悬浮停止
+            peopleCheer.pause(0); // 人物举杯停止
+
+            htColorChange.play(0); // 花田颜色变换
+            htBalloonFloat.play(0); // 花田气球漂浮
+
+            showTicket(); // 出现票
+        }
+    });
+    htShow.set('#ht', {display: 'block'})
+    .add('htStart')
+    .to('body', 0.6, {backgroundColor: $color5}, 'htStart')
+    .fromTo('#ht', 0.8, {x: -727}, {x: 0, ease: Power3.easeInOut}, 'htStart')
+    .to('#wd', 0.8, {x: 726, ease: Power3.easeInOut}, 'htStart')
+    .set('#wd', {display: 'none'})
+    .staggerFromTo(['#ht-balloonb', '#ht-balloons'], 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0}, 0.2)
+    .fromTo('#ht-people', 0.6, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
+    .fromTo('#ht-tag', 0.6, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, '-=0.5');
+}
+
+// 花田颜色变换
+var htColorChange = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 0.5
+});
+htColorChange.add('colorStart')
+.set('.ht-color', {autoAlpha: 0}, 'colorStart')
+.set('#ht-color1', {autoAlpha: 1}, 'colorStart')
+.set('.ht-color', {autoAlpha: 0}, 'colorStart+=0.5')
+.set('#ht-color2', {autoAlpha: 1}, 'colorStart+=0.5');
+
+var htBalloonFloat = new TimelineMax({
+    paused: true
+});
+
+htBalloonFloat.add('balloonStart')
+.to('#ht-balloonb', 10, {y: -70, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart')
+.to('#ht-balloons', 17, {y: -160, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart');
 
 
 (function($) {
