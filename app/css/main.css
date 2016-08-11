@@ -804,7 +804,70 @@ body {
   height: 65px;
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds, #wd {
+#ht-container {
+  top: 98px;
+  left: -84px;
+  width: 811px;
+  height: 704px;
+}
+
+#ht-color1 {
+  top: 358px;
+  left: 111px;
+  width: 663px;
+  height: 138px;
+}
+
+#ht-color2 {
+  top: 358px;
+  left: 111px;
+  width: 663px;
+  height: 138px;
+}
+
+#ht-castle {
+  top: 307px;
+  left: 622px;
+  width: 78px;
+  height: 76px;
+}
+
+#ht-tree {
+  top: 381px;
+  left: 165px;
+  width: 559px;
+  height: 108px;
+}
+
+#ht-people {
+  top: 377px;
+  left: 93px;
+  width: 436px;
+  height: 214px;
+}
+
+#ht-balloons {
+  top: -98px;
+  left: 614px;
+  width: 60px;
+  height: 365px;
+}
+
+#ht-balloonb {
+  top: -98px;
+  left: 232px;
+  width: 132px;
+  height: 300px;
+}
+
+#ht-tag {
+  top: 559px;
+  left: 130px;
+  width: 549px;
+  height: 96px;
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht {
   display: none;
 }
 

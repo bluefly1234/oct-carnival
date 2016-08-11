@@ -74,7 +74,19 @@ var sourceArr = [
     'images/wd-building4.png',
     'images/wd-people1.png',
     'images/wd-people2.png',
-    'images/wd-tree.png'
+    'images/wd-tree.png',
+
+    // ht
+    'images/ht-balloonb.png',
+    'images/ht-balloons.png',
+    'images/ht-bg.png',
+    'images/ht-castle.png',
+    'images/ht-color1.png',
+    'images/ht-color2.png',
+    'images/ht-people.png',
+    'images/ht-tag.png',
+    'images/ht-tree.png'
+
 
 ]; //需要加载的资源列表
 
@@ -164,6 +176,18 @@ function setBgImages() {
     $('#wd-people2').css('background-image', 'url(images/wd-people2.png)');
     $('#wd-tag').css('background-image', 'url(images/wd-tag.png)');
     $('#wd-airship').css('background-image', 'url(images/wd-airship.png)');
+
+    // ht
+    $('#ht-container').css('background-image', 'url(images/ht-bg.png)');
+    $('#ht-color1').css('background-image', 'url(images/ht-color1.png)');
+    $('#ht-color2').css('background-image', 'url(images/ht-color2.png)');
+    $('#ht-castle').css('background-image', 'url(images/ht-castle.png)');
+    $('#ht-tree').css('background-image', 'url(images/ht-tree.png)');
+    $('#ht-people').css('background-image', 'url(images/ht-people.png)');
+    $('#ht-balloonb').css('background-image', 'url(images/ht-balloonb.png)');
+    $('#ht-balloons').css('background-image', 'url(images/ht-balloons.png)');
+    $('#ht-tag').css('background-image', 'url(images/ht-tag.png)');
+
 
 }
 

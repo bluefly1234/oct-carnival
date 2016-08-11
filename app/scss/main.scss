@@ -691,7 +691,89 @@ $trees: '../images/trees.png';
     // background-image: url($wd-airship);
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds, #wd {
+// ht start=========================
+#ht-container {
+    top: 98px;
+    left: -84px;
+    $ht-bg: '../images/ht-bg.png';
+    width: image-width($ht-bg);
+    height: image-height($ht-bg);
+    // background-image: url($ht-bg);
+}
+
+#ht-color1 {
+    top: 358px;
+    left: 111px;
+    $ht-color1: '../images/ht-color1.png';
+    width: image-width($ht-color1);
+    height: image-height($ht-color1);
+    // background-image: url($ht-color1);
+}
+
+#ht-color2 {
+    top: 358px;
+    left: 111px;
+    $ht-color2: '../images/ht-color2.png';
+    width: image-width($ht-color2);
+    height: image-height($ht-color2);
+    // background-image: url($ht-color2);
+}
+
+#ht-castle {
+    top: 307px;
+    left: 622px;
+    $ht-castle: '../images/ht-castle.png';
+    width: image-width($ht-castle);
+    height: image-height($ht-castle);
+    // background-image: url($ht-castle);
+}
+
+#ht-tree {
+    top: 381px;
+    left: 165px;
+    $ht-tree: '../images/ht-tree.png';
+    width: image-width($ht-tree);
+    height: image-height($ht-tree);
+    // background-image: url($ht-tree);
+}
+
+#ht-people {
+    top: 377px;
+    left: 93px;
+    $ht-people: '../images/ht-people.png';
+    width: image-width($ht-people);
+    height: image-height($ht-people);
+    // background-image: url($ht-people);
+}
+
+#ht-balloons {
+    top: -98px;
+    left: 614px;
+    $ht-balloons: '../images/ht-balloons.png';
+    width: image-width($ht-balloons);
+    height: image-height($ht-balloons);
+    // background-image: url($ht-balloons);
+}
+
+#ht-balloonb {
+    top: -98px;
+    left: 232px;
+    $ht-balloonb: '../images/ht-balloonb.png';
+    width: image-width($ht-balloonb);
+    height: image-height($ht-balloonb);
+    // background-image: url($ht-balloonb);
+}
+
+#ht-tag {
+    top: 559px;
+    left: 130px;
+    $ht-tag: '../images/ht-tag.png';
+    width: image-width($ht-tag);
+    height: image-height($ht-tag);
+    // background-image: url($ht-tag);
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht {
     display: none;
 }
 
