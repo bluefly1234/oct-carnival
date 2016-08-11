@@ -89,7 +89,21 @@ var sourceArr = [
     'images/ht-tree.png',
 
     // yn
-    'images/yn-bg.png'
+    'images/yn-bg.png',
+
+    // tz
+    'images/tz-bg.png',
+    'images/tz-bottom-people1.png',
+    'images/tz-bottom-people2.png',
+    'images/tz-desk1.png',
+    'images/tz-desk2.png',
+    'images/tz-moon.png',
+    'images/tz-ribbon.png',
+    'images/tz-tag.png',
+    'images/tz-top-light.png',
+    'images/tz-top-people1.png',
+    'images/tz-top-people2.png',
+    'images/spotlights.png'
 
 
 ]; //需要加载的资源列表
@@ -195,6 +209,22 @@ function setBgImages() {
 
     // yn
     $('#yn-container').css('background-image', 'url(images/yn-bg.png)');
+
+    // tz
+    $('#tz-container').css('background-image', 'url(images/tz-bg.png)');
+    $('#tz-moon').css('background-image', 'url(images/tz-moon.png)');
+    $('#tz-bottom-people1').css('background-image', 'url(images/tz-bottom-people1.png)');
+    $('#tz-bottom-people2').css('background-image', 'url(images/tz-bottom-people2.png)');
+    $('#tz-top-people1').css('background-image', 'url(images/tz-top-people1.png)');
+    $('#tz-top-people2').css('background-image', 'url(images/tz-top-people2.png)');
+    $('#spotlights').css('background-image', 'url(images/spotlights.png)');
+    $('#tz-desk1').css('background-image', 'url(images/tz-desk1.png)');
+    $('#tz-desk2').css('background-image', 'url(images/tz-desk2.png)');
+    $('#tz-top-light').css('background-image', 'url(images/tz-top-light.png)');
+    $('#tz-ribbon').css('background-image', 'url(images/tz-ribbon.png)');
+    $('#tz-tag').css('background-image', 'url(images/tz-tag.png)');
+
+
 
 
 }

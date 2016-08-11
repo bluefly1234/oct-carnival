@@ -881,11 +881,95 @@ body {
   height: 827px;
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht, #yn {
+#tz-container {
+  top: 87px;
+  left: -67px;
+  width: 793px;
+  height: 714px;
+}
+
+#tz-moon {
+  top: -59px;
+  left: 498px;
+  width: 207px;
+  height: 207px;
+}
+
+#tz-bottom-people1 {
+  top: 444px;
+  left: 118px;
+  width: 572px;
+  height: 145px;
+}
+
+#tz-bottom-people2 {
+  top: 444px;
+  left: 118px;
+  width: 570px;
+  height: 145px;
+}
+
+#spotlights {
+  top: 21px;
+  left: 136px;
+  width: 505px;
+  height: 85px;
+}
+
+#tz-top-people1 {
+  top: -87px;
+  left: 169px;
+  width: 480px;
+  height: 512px;
+}
+
+#tz-top-people2 {
+  top: -87px;
+  left: 169px;
+  width: 477px;
+  height: 512px;
+}
+
+#tz-desk1 {
+  top: 346px;
+  left: 353px;
+  width: 151px;
+  height: 89px;
+}
+
+#tz-desk2 {
+  top: 346px;
+  left: 353px;
+  width: 151px;
+  height: 89px;
+}
+
+#tz-top-light {
+  top: -180px;
+  left: 67px;
+  width: 640px;
+  height: 501px;
+}
+
+#tz-ribbon {
+  top: 28px;
+  left: 66px;
+  width: 642px;
+  height: 518px;
+}
+
+#tz-tag {
+  top: 570px;
+  left: 113px;
+  width: 549px;
+  height: 96px;
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht, #yn, #tz {
   display: none;
 }
 
-#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship, #ht-people2 {
+#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship, #ht-people2, #tz-bottom-people2, #spotlights, #tz-top-people2, #tz-desk2, #tz-top-light, #tz-ribbon {
   visibility: hidden;
 }
 

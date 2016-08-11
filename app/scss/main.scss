@@ -792,10 +792,119 @@ $trees: '../images/trees.png';
     // background-image: url($yn-bg);
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht, #yn {
+// tz start======================
+#tz-container {
+    top: 87px;
+    left: -67px;
+    $tz-bg: '../images/tz-bg.png';
+    width: image-width($tz-bg);
+    height: image-height($tz-bg);
+    // background-image: url($tz-bg);
+}
+
+#tz-moon {
+    top: -59px;
+    left: 498px;
+    $tz-moon: '../images/tz-moon.png';
+    width: image-width($tz-moon);
+    height: image-height($tz-moon);
+    // background-image: url($tz-moon);
+}
+
+#tz-bottom-people1 {
+    top: 444px;
+    left: 118px;
+    $tz-bottom-people1: '../images/tz-bottom-people1.png';
+    width: image-width($tz-bottom-people1);
+    height: image-height($tz-bottom-people1);
+    // background-image: url($tz-bottom-people1);
+}
+
+#tz-bottom-people2 {
+    top: 444px;
+    left: 118px;
+    $tz-bottom-people2: '../images/tz-bottom-people2.png';
+    width: image-width($tz-bottom-people2);
+    height: image-height($tz-bottom-people2);
+    // background-image: url($tz-bottom-people2);
+}
+
+#spotlights {
+    top: 21px;
+    left: 136px;
+    $spotlights: '../images/spotlights.png';
+    width: image-width($spotlights);
+    height: image-height($spotlights);
+    // background-image: url($spotlights);
+}
+
+#tz-top-people1 {
+    top: -87px;
+    left: 169px;
+    $tz-top-people1: '../images/tz-top-people1.png';
+    width: image-width($tz-top-people1);
+    height: image-height($tz-top-people1);
+    // background-image: url($tz-top-people1);
+}
+
+#tz-top-people2 {
+    top: -87px;
+    left: 169px;
+    $tz-top-people2: '../images/tz-top-people2.png';
+    width: image-width($tz-top-people2);
+    height: image-height($tz-top-people2);
+    // background-image: url($tz-top-people2);
+}
+
+#tz-desk1 {
+    top: 346px;
+    left: 353px;
+    $tz-desk1: '../images/tz-desk1.png';
+    width: image-width($tz-desk1);
+    height: image-height($tz-desk1);
+    // background-image: url($tz-desk1);
+}
+
+#tz-desk2 {
+    top: 346px;
+    left: 353px;
+    $tz-desk2: '../images/tz-desk2.png';
+    width: image-width($tz-desk2);
+    height: image-height($tz-desk2);
+    // background-image: url($tz-desk2);
+}
+
+#tz-top-light {
+    top: -180px;
+    left: 67px;
+    $tz-top-light: '../images/tz-top-light.png';
+    width: image-width($tz-top-light);
+    height: image-height($tz-top-light);
+    // background-image: url($tz-top-light);
+}
+
+#tz-ribbon {
+    top: 28px;
+    left: 66px;
+    $tz-ribbon: '../images/tz-ribbon.png';
+    width: image-width($tz-ribbon);
+    height: image-height($tz-ribbon);
+    // background-image: url($tz-ribbon);
+}
+
+#tz-tag {
+    top: 570px;
+    left: 113px;
+    $tz-tag: '../images/tz-tag.png';
+    width: image-width($tz-tag);
+    height: image-height($tz-tag);
+    // background-image: url($tz-tag);
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht, #yn, #tz {
     display: none;
 }
 
-#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship, #ht-people2 {
+#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship, #ht-people2, #tz-bottom-people2, #spotlights, #tz-top-people2, #tz-desk2, #tz-top-light, #tz-ribbon {
     visibility: hidden;
 }
