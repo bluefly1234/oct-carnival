@@ -591,10 +591,110 @@ $trees: '../images/trees.png';
     // background-image: url($ms-tag);
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds {
+// wd start===================================
+#wd-container {
+    top: 92px;
+    left: -75px;
+    $wd-bg: '../images/wd-bg.png';
+    width: image-width($wd-bg);
+    height: image-height($wd-bg);
+    background-image: url($wd-bg);
+}
+
+#wd-building1 {
+    top: -92px;
+    left: 294px;
+    $wd-building1: '../images/wd-building1.png';
+    width: image-width($wd-building1);
+    height: image-height($wd-building1);
+    background-image: url($wd-building1);
+}
+
+#wd-building2 {
+    top: -92px;
+    left: 413px;
+    $wd-building2: '../images/wd-building2.png';
+    width: image-width($wd-building2);
+    height: image-height($wd-building2);
+    background-image: url($wd-building2);
+}
+
+#wd-building3 {
+    top: -92px;
+    left: 109px;
+    $wd-building3: '../images/wd-building3.png';
+    width: image-width($wd-building3);
+    height: image-height($wd-building3);
+    background-image: url($wd-building3);
+}
+
+#wd-building4 {
+    top: 345px;
+    left: 272px;
+    $wd-building4: '../images/wd-building4.png';
+    width: image-width($wd-building4);
+    height: image-height($wd-building4);
+    background-image: url($wd-building4);
+}
+
+#wd-tree {
+    top: 344px;
+    left: 81px;
+    $wd-tree: '../images/wd-tree.png';
+    width: image-width($wd-tree);
+    height: image-height($wd-tree);
+    background-image: url($wd-tree);
+}
+
+#wd-beer {
+    top: 346px;
+    left: 117px;
+    $wd-beer: '../images/wd-beer.png';
+    width: image-width($wd-beer);
+    height: image-height($wd-beer);
+    background-image: url($wd-beer);
+}
+
+#wd-people1 {
+    top: 421px;
+    left: 150px;
+    $wd-people1: '../images/wd-people1.png';
+    width: image-width($wd-people1);
+    height: image-height($wd-people1);
+    background-image: url($wd-people1);
+}
+
+#wd-people2 {
+    top: 436px;
+    left: 150px;
+    $wd-people2: '../images/wd-people2.png';
+    width: image-width($wd-people2);
+    height: image-height($wd-people2);
+    background-image: url($wd-people2);
+}
+
+#wd-banner {
+    top: 577px;
+    left: 111px;
+    $wd-banner: '../images/wd-banner.png';
+    width: image-width($wd-banner);
+    height: image-height($wd-banner);
+    background-image: url($wd-banner);
+}
+
+#wd-airship {
+    top: 108px;
+    left: 793px;
+    $wd-airship: '../images/wd-airship.png';
+    width: image-width($wd-airship);
+    height: image-height($wd-airship);
+    background-image: url($wd-airship);
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd {
     display: none;
 }
 
-#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2 {
+#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2 {
     visibility: hidden;
 }
