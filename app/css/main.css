@@ -732,7 +732,6 @@ body {
   left: -75px;
   width: 793px;
   height: 735px;
-  background-image: url("../images/wd-bg.png");
 }
 
 #wd-building1 {
@@ -740,7 +739,6 @@ body {
   left: 294px;
   width: 110px;
   height: 513px;
-  background-image: url("../images/wd-building1.png");
 }
 
 #wd-building2 {
@@ -748,7 +746,6 @@ body {
   left: 413px;
   width: 266px;
   height: 568px;
-  background-image: url("../images/wd-building2.png");
 }
 
 #wd-building3 {
@@ -756,7 +753,6 @@ body {
   left: 109px;
   width: 247px;
   height: 515px;
-  background-image: url("../images/wd-building3.png");
 }
 
 #wd-building4 {
@@ -764,7 +760,6 @@ body {
   left: 272px;
   width: 218px;
   height: 135px;
-  background-image: url("../images/wd-building4.png");
 }
 
 #wd-tree {
@@ -772,7 +767,6 @@ body {
   left: 81px;
   width: 475px;
   height: 127px;
-  background-image: url("../images/wd-tree.png");
 }
 
 #wd-beer {
@@ -780,7 +774,6 @@ body {
   left: 117px;
   width: 586px;
   height: 149px;
-  background-image: url("../images/wd-beer.png");
 }
 
 #wd-people1 {
@@ -788,7 +781,6 @@ body {
   left: 150px;
   width: 447px;
   height: 165px;
-  background-image: url("../images/wd-people1.png");
 }
 
 #wd-people2 {
@@ -796,15 +788,13 @@ body {
   left: 150px;
   width: 447px;
   height: 150px;
-  background-image: url("../images/wd-people2.png");
 }
 
-#wd-banner {
+#wd-tag {
   top: 577px;
   left: 111px;
   width: 549px;
   height: 96px;
-  background-image: url("../images/wd-banner.png");
 }
 
 #wd-airship {
@@ -812,7 +802,6 @@ body {
   left: 793px;
   width: 288px;
   height: 65px;
-  background-image: url("../images/wd-airship.png");
 }
 
 #cover, #hlg, #ms, #ticket-container, #clouds, #wd {

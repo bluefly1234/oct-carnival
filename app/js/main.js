@@ -7,7 +7,7 @@ var $color1 = '#64caff'; // 封面第一页
 var $color2 = '#4f6c9d'; // 第二页
 var $color3 = '#a3d0e3'; // 第三页
 var $color4 = '#5d5f77'; // 第四页
-var $color5 = ''; // 第五页
+var $color5 = '#38a9dd'; // 第五页
 var $color6 = '#454e8d'; // 第六页
 var $color7 = '#0f0c24'; // 第七页
 var $color8 = '#9f7954'; // 第八页
@@ -61,7 +61,20 @@ var sourceArr = [
     'images/ms-water.png',
     'images/ms-people1.png',
     'images/ms-people2.png',
-    'images/ms-tag.png'
+    'images/ms-tag.png',
+
+    //wd
+    'images/wd-airship.png',
+    'images/wd-tag.png',
+    'images/wd-beer.png',
+    'images/wd-bg.png',
+    'images/wd-building1.png',
+    'images/wd-building2.png',
+    'images/wd-building3.png',
+    'images/wd-building4.png',
+    'images/wd-people1.png',
+    'images/wd-people2.png',
+    'images/wd-tree.png'
 
 ]; //需要加载的资源列表
 
@@ -137,6 +150,20 @@ function setBgImages() {
     $('#ms-people1').css('background-image', 'url(images/ms-people1.png)');
     $('#ms-people2').css('background-image', 'url(images/ms-people2.png)');
     $('#ms-tag').css('background-image', 'url(images/ms-tag.png)');
+
+    // wd
+    $('#wd-container').css('background-image', 'url(images/wd-bg.png)');
+    $('#wd-building1').css('background-image', 'url(images/wd-building1.png)');
+    $('#wd-building2').css('background-image', 'url(images/wd-building2.png)');
+    $('#wd-building3').css('background-image', 'url(images/wd-building3.png)');
+    $('#wd-building4').css('background-image', 'url(images/wd-building4.png)');
+    $('#wd-building1').css('background-image', 'url(images/wd-building1.png)');
+    $('#wd-tree').css('background-image', 'url(images/wd-tree.png)');
+    $('#wd-beer').css('background-image', 'url(images/wd-beer.png)');
+    $('#wd-people1').css('background-image', 'url(images/wd-people1.png)');
+    $('#wd-people2').css('background-image', 'url(images/wd-people2.png)');
+    $('#wd-tag').css('background-image', 'url(images/wd-tag.png)');
+    $('#wd-airship').css('background-image', 'url(images/wd-airship.png)');
 
 }
 
@@ -554,7 +581,7 @@ function msToWd() {
     .to('#ms', 0.8, {x: 726, ease: Power3.easeInOut}, 'wdStart')
     .set('#ms', {display: 'none'})
     .staggerFromTo(['#wd-building1', '#wd-building3', '#wd-building2', '#wd-building4'], 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0}, 0.2)
-    .fromTo(['#wd-people1', '#wd-beer'], 0.6, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo(['#wd-people1', '#wd-beer', '#wd-tree'], 0.6, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
     .fromTo('#wd-tag', 0.6, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, '-=0.5');
 
 }
