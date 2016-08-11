@@ -86,7 +86,10 @@ var sourceArr = [
     'images/ht-people1.png',
     'images/ht-people2.png',
     'images/ht-tag.png',
-    'images/ht-tree.png'
+    'images/ht-tree.png',
+
+    // yn
+    'images/yn-bg.png'
 
 
 ]; //需要加载的资源列表
@@ -189,6 +192,9 @@ function setBgImages() {
     $('#ht-balloonb').css('background-image', 'url(images/ht-balloonb.png)');
     $('#ht-balloons').css('background-image', 'url(images/ht-balloons.png)');
     $('#ht-tag').css('background-image', 'url(images/ht-tag.png)');
+
+    // yn
+    $('#yn-container').css('background-image', 'url(images/yn-bg.png)');
 
 
 }
@@ -459,7 +465,8 @@ function goWhichPage() {
     }else if (curPage=='WD') {
         wdToHt(); // 世界之窗去花田
     }else if (curPage=='HT') {
-        alert('第六页云南华侨城设计在加图素,后面会先跳过此页动画');
+        alert('云南华侨城设计在加动作所需图素,此页当前为静态，后续添加动画');
+        htToYn(); // 花田去云南
     }
 }
 
@@ -702,6 +709,27 @@ var htBalloonFloat = new TimelineMax({
 htBalloonFloat.add('balloonStart')
 .to('#ht-balloonb', 6, {y: -70, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart')
 .to('#ht-balloons', 13, {y: -160, ease: Power1.easeInOut, repeat: -1, yoyo: true}, 'balloonStart');
+
+// 花田切云南
+function htToYn() {
+    var ynShow = new TimelineMax({
+        onComplete: function () {
+            curPage = 'YN'; // 云南
+
+            htColorChange.pause(0); // 花田颜色变换暂停
+            htBalloonFloat.pause(0); // 花田气球漂浮暂停
+            htPeopleChange.pause(0); // 花田人物动作暂停
+
+            showTicket(); // 出现票
+        }
+    });
+    ynShow.set('#yn', {display: 'block'})
+    .add('ynStart')
+    .to('body', 0.6, {backgroundColor: $color6}, 'ynStart')
+    .fromTo('#yn', 0.8, {x: -727}, {x: 0, ease: Power3.easeInOut}, 'ynStart')
+    .to('#ht', 0.8, {x: 726, ease: Power3.easeInOut}, 'ynStart')
+    .set('#ht', {display: 'none'})
+}
 
 
 (function($) {

@@ -874,7 +874,14 @@ body {
   height: 96px;
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht {
+#yn-container {
+  top: 0;
+  left: -75px;
+  width: 793px;
+  height: 827px;
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht, #yn {
   display: none;
 }
 

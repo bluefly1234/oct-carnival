@@ -782,7 +782,17 @@ $trees: '../images/trees.png';
     // background-image: url($ht-tag);
 }
 
-#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht {
+// yn start===================
+#yn-container {
+    top: 0;
+    left: -75px;
+    $yn-bg: '../images/yn-bg.png';
+    width: image-width($yn-bg);
+    height: image-height($yn-bg);
+    // background-image: url($yn-bg);
+}
+
+#cover, #hlg, #ms, #ticket-container, #clouds, #wd, #ht, #yn {
     display: none;
 }
 
