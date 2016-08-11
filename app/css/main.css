@@ -819,7 +819,7 @@ body {
   display: none;
 }
 
-#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2 {
+#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship {
   visibility: hidden;
 }
 

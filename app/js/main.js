@@ -346,7 +346,7 @@ function hideCover() {
 }
 
 // 点击封面票
-$('#ticket').on('touchstart', hideCover);
+$('#ticket, #cover-guide').on('touchstart', hideCover);
 
 // 初始化插票机
 function initPlugMachine() {
@@ -402,7 +402,9 @@ function goWhichPage() {
     if (curPage=='HLG') {
         hlgToMs(); // 欢乐谷去民俗村
     }else if (curPage=='MS') {
-        alert('到啤酒节，开发中');
+        msToWd(); // 民俗村去世界之窗
+    }else if (curPage=='WD') {
+
     }
 }
 
@@ -533,6 +535,60 @@ peopleWater.add('waterStart')
 .set('.ms-people', {autoAlpha: 0}, 'waterStart+=0.5')
 .set('#ms-people2', {autoAlpha: 1}, 'waterStart+=0.5');
 
+// 民俗去世界之窗啤酒节
+function msToWd() {
+    var wdShow = new TimelineMax({
+        onComplete: function () {
+            curPage = 'WD'; // 世界之窗啤酒节
+            peopleWater.pause(0); // 泼水暂停
+            peopleCheer.play(0); // 人群碰杯
+            airShipFly.play(0); // 飞艇漂浮
+
+            showTicket(); // 出现票
+        }
+    });
+    wdShow.set('#wd', {display: 'block'})
+    .add('wdStart')
+    .to('body', 0.6, {backgroundColor: $color4}, 'wdStart')
+    .fromTo('#wd', 0.8, {x: -727}, {x: 0, ease: Power3.easeInOut}, 'wdStart')
+    .to('#ms', 0.8, {x: 726, ease: Power3.easeInOut}, 'wdStart')
+    .set('#ms', {display: 'none'})
+    .staggerFromTo(['#wd-building1', '#wd-building3', '#wd-building2', '#wd-building4'], 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0}, 0.2)
+    .fromTo(['#wd-people1', '#wd-beer'], 0.6, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#wd-tag', 0.6, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, '-=0.5');
+
+}
+
+// 人群碰杯
+var peopleCheer = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 0.5
+});
+peopleCheer.add('cheerStart')
+.set('.wd-people', {autoAlpha: 0}, 'cheerStart')
+.set('#wd-people1', {autoAlpha: 1}, 'cheerStart')
+.set('.wd-people', {autoAlpha: 0}, 'cheerStart+=0.5')
+.set('#wd-people2', {autoAlpha: 1}, 'cheerStart+=0.5');
+
+// 飞艇飞
+var airShipFly = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    onStart: function () {
+        airShipFloat.play(0); // 飞艇开始漂浮
+    }
+});
+airShipFly.set('#wd-airship', {autoAlpha: 1})
+.to('#wd-airship', 20, {x: -1100, ease: Power1.easeNone});
+
+// 飞艇漂浮
+var airShipFloat = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+airShipFloat.to('#wd-airship', 1.2, {y: 40, ease: Power1.easeInOut});
 
 
 (function($) {
