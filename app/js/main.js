@@ -83,7 +83,8 @@ var sourceArr = [
     'images/ht-castle.png',
     'images/ht-color1.png',
     'images/ht-color2.png',
-    'images/ht-people.png',
+    'images/ht-people1.png',
+    'images/ht-people2.png',
     'images/ht-tag.png',
     'images/ht-tree.png'
 
@@ -183,7 +184,8 @@ function setBgImages() {
     $('#ht-color2').css('background-image', 'url(images/ht-color2.png)');
     $('#ht-castle').css('background-image', 'url(images/ht-castle.png)');
     $('#ht-tree').css('background-image', 'url(images/ht-tree.png)');
-    $('#ht-people').css('background-image', 'url(images/ht-people.png)');
+    $('#ht-people1').css('background-image', 'url(images/ht-people1.png)');
+    $('#ht-people2').css('background-image', 'url(images/ht-people2.png)');
     $('#ht-balloonb').css('background-image', 'url(images/ht-balloonb.png)');
     $('#ht-balloons').css('background-image', 'url(images/ht-balloons.png)');
     $('#ht-tag').css('background-image', 'url(images/ht-tag.png)');
@@ -653,6 +655,7 @@ function wdToHt() {
 
             htColorChange.play(0); // 花田颜色变换
             htBalloonFloat.play(0); // 花田气球漂浮
+            htPeopleChange.play(0); // 花田人物动作
 
             showTicket(); // 出现票
         }
@@ -664,9 +667,21 @@ function wdToHt() {
     .to('#wd', 0.8, {x: 726, ease: Power3.easeInOut}, 'htStart')
     .set('#wd', {display: 'none'})
     .staggerFromTo(['#ht-balloonb', '#ht-balloons'], 0.8, {autoAlpha: 0, y: -800}, {autoAlpha: 1, y: 0}, 0.2)
-    .fromTo('#ht-people', 0.6, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
+    .fromTo('#ht-people1', 0.6, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.2')
     .fromTo('#ht-tag', 0.6, {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0}, '-=0.5');
 }
+
+// 花田人物动作
+var htPeopleChange = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 0.5
+});
+htPeopleChange.add('htPeopleStart')
+.set('.ht-people', {autoAlpha: 0}, 'htPeopleStart')
+.set('#ht-people1', {autoAlpha: 1}, 'htPeopleStart')
+.set('.ht-people', {autoAlpha: 0}, 'htPeopleStart+=0.5')
+.set('#ht-people2', {autoAlpha: 1}, 'htPeopleStart+=0.5');
 
 // 花田颜色变换
 var htColorChange = new TimelineMax({

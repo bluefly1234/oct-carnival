@@ -737,13 +737,22 @@ $trees: '../images/trees.png';
     // background-image: url($ht-tree);
 }
 
-#ht-people {
+#ht-people1 {
     top: 377px;
     left: 93px;
-    $ht-people: '../images/ht-people.png';
-    width: image-width($ht-people);
-    height: image-height($ht-people);
-    // background-image: url($ht-people);
+    $ht-people1: '../images/ht-people1.png';
+    width: image-width($ht-people1);
+    height: image-height($ht-people1);
+    // background-image: url($ht-people1);
+}
+
+#ht-people2 {
+    top: 377px;
+    left: 93px;
+    $ht-people2: '../images/ht-people2.png';
+    width: image-width($ht-people2);
+    height: image-height($ht-people2);
+    // background-image: url($ht-people2);
 }
 
 #ht-balloons {
@@ -777,6 +786,6 @@ $trees: '../images/trees.png';
     display: none;
 }
 
-#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship {
+#music-control, #water2, #tap-guide, #ticket-plug, #ms-people1, #ms-people2, #wd-people2, #wd-airship, #ht-people2 {
     visibility: hidden;
 }
